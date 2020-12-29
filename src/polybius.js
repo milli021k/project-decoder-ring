@@ -36,7 +36,7 @@ function polybius(input, encode = true) {
          if(letter===' ')
          {
            result = result+letter;
-           break;
+           continue;
          }
    
       for(let row=0;row<grid.length;row++){
