@@ -1,4 +1,5 @@
 function polybius(input, encode = true) {
+  let inputString =input.toLowerCase();   
   let answer ="";
   let grid = [
    ['#','#','#','#','#','#'],
@@ -11,21 +12,20 @@ function polybius(input, encode = true) {
  
   if (encode!=false)
     {
-     answer = encoder(input,grid);
+     answer = encoder(inputString,grid);
     }
    else
     {
-     answer = decoder(input,grid);
+     answer = decoder(inputString,grid);
     }
   return answer;
    
  }
    
  // custom helper function 
- function encoder(input,grid){
+ function encoder(inputString,grid){
  
  let result="";
-     let inputString =input.toLowerCase();   
     for(let i=0 ; i<inputString.length;i++)
     {
      let letter = inputString[i];
@@ -58,17 +58,15 @@ function polybius(input, encode = true) {
  
  // function to decode a number to string 
  
- function decoder(input,grid){
+ function decoder(inputString,grid){
  let result ="";
- let controler=0;
- for(let i=0 ; i<input.length;i=i+2)
+ for(let i=0 ; i<inputString.length;i=i+2)
  {
-  let letterCoordinate = input[i]+input[i+1];
-   
+  let letterCoordinate = inputString[i]+inputString[i+1];
  
-  if(letterCoordinate[i]===' ')
-    {controler =controler-1;
-      result = result+letterCoordinate;
+  if(letterCoordinate[0]===' ')
+    { i =i-1;
+      result = result+letterCoordinate[0];
       continue;
     }
  
@@ -77,14 +75,12 @@ function polybius(input, encode = true) {
    {
    if(row===parseInt(letterCoordinate[0])&&column===parseInt(letterCoordinate[1]))
      {
-      result=result+grid[row][column];
+      result=result+grid[column][row];
     }
   }
- 
  }
  }
    return result;
- }
- 
+ } 
    
 module.exports = polybius;
