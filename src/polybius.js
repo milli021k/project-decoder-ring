@@ -14,10 +14,12 @@ function polybius(input, encode = true) {
       {
        answer = encoder(inputString,grid);
       }
+      {
      else
       {
        answer = decoder(inputString,grid);
       }
+        
     return answer;
      
    }
@@ -59,8 +61,9 @@ function polybius(input, encode = true) {
    // function to decode a number to string 
    
    function decoder(inputString,grid){
+   
    let processedString = inputString.split(" ");
-   var removedSpaces =processedString.join('');
+   let removedSpaces =processedString.join('');
    if((removedSpaces.length%2)!=0)
    {
      return false;
@@ -90,4 +93,4 @@ function polybius(input, encode = true) {
      return result;
    }
    module.exports = polybius;
-   
+
