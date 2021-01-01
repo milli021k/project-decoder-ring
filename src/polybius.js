@@ -14,10 +14,12 @@ function polybius(input, encode = true) {
       {
        answer = encoder(inputString,grid);
       }
+      {
      else
       {
        answer = decoder(inputString,grid);
       }
+        
     return answer;
      
    }
@@ -91,4 +93,4 @@ function polybius(input, encode = true) {
      return result;
    }
    module.exports = polybius;
-   
+
