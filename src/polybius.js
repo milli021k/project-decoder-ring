@@ -14,7 +14,7 @@ function polybius(input, encode = true) {
       {
        answer = encoder(inputString,grid);
       }
-      {
+      
      else
       {
        answer = decoder(inputString,grid);
