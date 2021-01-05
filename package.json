@@ -4,7 +4,7 @@
   "description": "This project allows you to encode and decode text with a variety of different ciphers.",
   "scripts": {
     "test": "mocha test",
-    "start": "live-server --port=8090 public/"
+    "start": "live-server --port=8090 "
   },
   "keywords": [],
   "author": "",
