@@ -29,6 +29,7 @@ function encoderPolybius(inputString, grid) {
       result = result + character;
       continue;
     }
+
     if (!/[a-zA-Z]/.test(character)) {
       return false;
     }
