@@ -54,11 +54,11 @@ function encoderSubstitution(inputString, alphabet, orderdAplhabet) {
   return result;
 }
 
-function checkDuplicate(input) {
+function checkDuplicate(inputString) {
   let answer = false;
-  for (let i = 0; i < input.length; i++) {
-    for (let j = i + 1; j < input.length; j++) {
-      if (input[i] === input[j]) {
+  for (let charOne = 0; charOne < inputString.length; charOne++) {
+    for (let charTwo = charOne + 1; charTwo < inputString.length; charTwo++) {
+      if (inputString[charOne] === inputString[charTwo]) {
         answer = true;
       }
     }
